@@ -2,4 +2,15 @@
 
 .component {
   padding: $base-size;
+  background-color: burlywood;
+}
+
+a {
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 22px;
+}
+.active {
+  color: red;
 }
