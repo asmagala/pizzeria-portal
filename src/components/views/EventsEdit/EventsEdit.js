@@ -3,7 +3,8 @@ import styles from './EventsEdit.module.scss';
 import PropTypes from 'prop-types';
 
 const EventsEdit = (props) => {
-  const {id} = { ...props };
+  const {id} = { ...props.match.params };
+  console.log('id:', props);
   return (
     <div className={styles.component}>
       <h2>
@@ -13,7 +14,10 @@ const EventsEdit = (props) => {
   );
 };
 
+
 EventsEdit.propTypes = {
+  match: PropTypes.object,
+  params: PropTypes.object,
   id: PropTypes.string,
 };
 

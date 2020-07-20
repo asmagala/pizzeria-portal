@@ -3,7 +3,7 @@ import styles from './OrderEdit.module.scss';
 import PropTypes from 'prop-types';
 
 const OrderEdit = (props) => {
-  const {id} = { ...props };
+  const {id} = { ...props.match.params };
   return (
     <div className={styles.component}>
       <h2>
@@ -14,6 +14,8 @@ const OrderEdit = (props) => {
 };
 
 OrderEdit.propTypes = {
+  match: PropTypes.object,
+  params: PropTypes.object,
   id: PropTypes.string,
 };
 
