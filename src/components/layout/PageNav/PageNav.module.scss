@@ -2,9 +2,14 @@
 
 .component {
   padding: $base-size;
-  background-color: burlywood;
+  margin-left: auto;
 }
 
+.link {
+  color: inherit;
+}
+
+/*
 a {
   text-align: center;
   padding: 14px 16px;
@@ -14,3 +19,4 @@ a {
 .active {
   color: red;
 }
+*/
