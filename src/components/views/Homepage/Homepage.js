@@ -16,10 +16,10 @@ const tables = [
 ];
 
 const statistics = [
-  {id: '2', location: 'TakeAway', status: 'done', payment: 'card'},
-  {id: '3', location: 'TakeAway', status: 'done', payment: 'cash'},
+  {id: '2', location: 'To Go', status: 'done', payment: 'card'},
+  {id: '3', location: 'To Go', status: 'done', payment: 'cash'},
   {id: '1', location: 'Delivery', status: 'done', payment: 'card'},
-  {id: '4', location: 'In Restaurant', status: 'done', payment: 'cash'},
+  {id: '4', location: 'Here', status: 'done', payment: 'cash'},
 ];
 
 const Homepage = () => {
