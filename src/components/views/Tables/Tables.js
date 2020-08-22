@@ -13,12 +13,12 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 
 const demoContent = [
-  {id: 1, tableId: 1, hour: '10:00', status: 'event'},
-  {id: 2, tableId: 3, hour: '10:00', status: 'event'},
-  {id: 3, tableId: 1, hour: '12:30', status: 'booked'},
-  {id: 5, tableId: 2, hour: '14:00', status: 'event'},
-  {id: 6, tableId: 4, hour: '11:30', status: 'booked'},
-  {id: 7, tableId: 2, hour: '17:00', status: 'booked'},
+  {id: 1, tableId: 1, hour: '10:00', status: 'events', statusID: 'event-23'},
+  {id: 2, tableId: 3, hour: '10:00', status: 'events', statusID: 'event-17'},
+  {id: 3, tableId: 1, hour: '12:30', status: 'booking', statusID: 'booking-57'},
+  {id: 5, tableId: 2, hour: '14:00', status: 'events', statusID: 'event-8'},
+  {id: 6, tableId: 4, hour: '11:30', status: 'booking', statusID: 'booking-87'},
+  {id: 7, tableId: 2, hour: '17:00', status: 'booking', statusID: 'booking-62'},
 ];
 
 const Tables = () => {
@@ -41,10 +41,10 @@ const Tables = () => {
             {demoContent.map(row => (
               <TableRow key={row.hour}>
                 <TableCell>{row.hour}</TableCell>
-                <TableCell>{row.tableId === 1 ? row.status : null}</TableCell>
-                <TableCell>{row.tableId === 2 ? row.status : null}</TableCell>
-                <TableCell>{row.tableId === 3 ? row.status : null}</TableCell>
-                <TableCell>{row.tableId === 4 ? row.status : null}</TableCell>
+                <TableCell>{row.tableId === 1 ? <Button><Link to={`${process.env.PUBLIC_URL}/tables/${row.status}/${row.statusID}`}>{row.status}</Link></Button> : null}</TableCell>
+                <TableCell>{row.tableId === 2 ? <Button><Link to={`${process.env.PUBLIC_URL}/tables/booking/${row.statusID}`}>{row.status}</Link></Button> : null}</TableCell>
+                <TableCell>{row.tableId === 3 ? <Button><Link to={`${process.env.PUBLIC_URL}/tables/booking/${row.statusID}`}>{row.status}</Link></Button> : null}</TableCell>
+                <TableCell>{row.tableId === 4 ? <Button><Link to={`${process.env.PUBLIC_URL}/tables/booking/${row.statusID}`}>{row.status}</Link></Button> : null}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -53,9 +53,9 @@ const Tables = () => {
       <Toolbar />
 
       <Button variant="outlined" color="primary" size="large"><Link to={`${process.env.PUBLIC_URL}/tables/booking/new`}>New Booking</Link></Button>
-      <Button variant="outlined" color="primary" size="large"><Link to={`${process.env.PUBLIC_URL}/tables/booking/book222`}>Add / Edit Booking</Link></Button>
+      {/*<Button variant="outlined" color="primary" size="large"><Link to={`${process.env.PUBLIC_URL}/tables/booking/book222`}>Edit Booking</Link></Button>*/}
       <Button variant="outlined" color="primary" size="large"><Link to={`${process.env.PUBLIC_URL}/tables/events/new`}>New Event</Link></Button>
-      <Button variant="outlined" color="primary" size="large"><Link to={`${process.env.PUBLIC_URL}/tables/events/event222`}>Add / Edit Event</Link></Button>
+      {/*<Button variant="outlined" color="primary" size="large"><Link to={`${process.env.PUBLIC_URL}/tables/events/event222`}>Edit Event</Link></Button>*/}
 
     </Container>
   );
