@@ -37,9 +37,9 @@ const BookingNew = () => {
         <InputLabel id="table-label">Table</InputLabel>
         <Select labelId="table-label" id="table-select" >
           <MenuItem value={1}>Table 1</MenuItem>
+          <MenuItem value={2}>Table 2</MenuItem>
           <MenuItem value={3}>Table 3</MenuItem>
           <MenuItem value={4}>Table 4</MenuItem>
-          <MenuItem value={2}>Table 2</MenuItem>
         </Select>
       </FormControl>
       <FormControl  className={classes.formControl}>
