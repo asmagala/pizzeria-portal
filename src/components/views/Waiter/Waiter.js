@@ -10,6 +10,8 @@ import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 
+import { Link } from 'react-router-dom';
+
 const demoContent = [
   {id: '1', status: 'free', order: null},
   {id: '2', status: 'thinking', order: null},
@@ -58,6 +60,7 @@ const Waiter = () => (
     <Toolbar />
     <Paper className={styles.component}>
       <h2>Table view</h2>
+      < hr />
       <Table>
         <TableHead>
           <TableRow>
@@ -78,9 +81,7 @@ const Waiter = () => (
               </TableCell>
               <TableCell>
                 {row.order && (
-                  <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
-                    {row.order}
-                  </Button>
+                  <Button><Link to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>{row.order}</ Link></Button>
                 )}
               </TableCell>
               <TableCell>
@@ -91,6 +92,8 @@ const Waiter = () => (
         </TableBody>
       </Table>
     </Paper>
+    <Toolbar />
+    <Button variant="outlined" color="primary" size="large"><Link to={`${process.env.PUBLIC_URL}/waiter/order/new`}>New Order</Link></Button>
   </Container>
 
 );

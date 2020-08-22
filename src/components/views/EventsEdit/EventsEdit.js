@@ -41,9 +41,7 @@ const EventsEdit = (props) => {
     <Container maxWidth='lg'>
       <Toolbar />
       <Paper className={styles.component}>
-        <h2>
-          Edit {id}
-        </h2>
+        <h2>Edit {id}</h2>
 
         <FormControl className={classes.formControl}>
           <InputLabel id="table-label">Table</InputLabel>
