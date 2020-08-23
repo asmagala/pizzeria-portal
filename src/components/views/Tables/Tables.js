@@ -39,7 +39,7 @@ const Tables = () => {
           </TableHead>
           <TableBody>
             {demoContent.map(row => (
-              <TableRow key={row.hour}>
+              <TableRow key={row.id}>
                 <TableCell>{row.hour}</TableCell>
                 <TableCell>{row.tableId === 1 ? <Button><Link to={`${process.env.PUBLIC_URL}/tables/${row.status}/${row.statusID}`}>{row.status}</Link></Button> : null}</TableCell>
                 <TableCell>{row.tableId === 2 ? <Button><Link to={`${process.env.PUBLIC_URL}/tables/booking/${row.statusID}`}>{row.status}</Link></Button> : null}</TableCell>
